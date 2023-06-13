@@ -285,5 +285,35 @@ kenzieAssert({
 })
 
 
+//OPTIONAL PART
 
+const palindromeCheckingButton = document.createElement('button')
+palindromeCheckingButton.textContent = 'Check Palindrome'
+palindromeCheckingButton.style.marginBottom = '50px'
+
+const input = document.createElement('textarea')
+
+const resultDiv = document.createElement('div')
+resultDiv.style.margin = '0 auto'
+// input.style.display = 'block'
+// input.style.margin = '0 auto'
+input.setAttribute('style', 'display: block; margin: 0 auto 20px auto; width: 250px; height: 50px; font-size: 18px')
+
+document.body.append(input, palindromeCheckingButton, resultDiv)
+
+palindromeCheckingButton.addEventListener('click', () => {
+
+    const inputValue = input.value
+
+    console.log("----------Find the Palindrome Unit test #10---------- ")
+
+    kenzieAssert({
+        actual: checkIfPalindrome(inputValue),
+        expected: true,
+        testNumber: 1,
+        testFunction: 'Single Word Palindrome #1',
+        failureMessage: `Single Word Palindrome #1 should return true`,
+    })
+    
+})
 
